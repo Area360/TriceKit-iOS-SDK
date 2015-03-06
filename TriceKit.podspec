@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                   = "TriceKit"
-  s.version                = "0.0.2"
+  s.version                = "0.0.3"
   s.summary                = "The TriceKit iOS SDK does things. Better summary coming soon."
 
   s.description            = <<-DESC
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'ZTA' do |ss|
-    ss.source_files = "include/TriceKitMapping/*.h"
+    ss.source_files = "include/TriceKitZTA/*.h"
     ss.vendored_libraries  = 'libTriceKitZTA.a'
 
     ss.dependency 'TriceKit/Core'
