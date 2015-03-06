@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                   = "TriceKit"
-  s.version                = "0.0.6"
+  s.version                = "0.0.7"
   s.summary                = "The TriceKit iOS SDK does things. Better summary coming soon."
 
   s.description            = <<-DESC
