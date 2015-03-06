@@ -23,8 +23,8 @@ Pod::Spec.new do |s|
   s.xcconfig               = { 'OTHER_LDFLAGS' => '-lObjC -lc++' }
 
   s.subspec 'Core' do |ss|
-    ss.public_header_files    = "include/TriceKitShared/*.h"
-    ss.vendored_libraries     = 'libTriceKitShared.a'
+    ss.public_header_files = "include/TriceKitShared/*.h"
+    ss.vendored_libraries  = 'libTriceKitShared.a'
 
     ss.dependency 'AFNetworking/NSURLSession'
     ss.dependency 'Mantle'
