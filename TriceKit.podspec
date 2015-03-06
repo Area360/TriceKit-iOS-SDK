@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.xcconfig               = { 'OTHER_LDFLAGS' => '-lObjC -lc++' }
 
   s.subspec 'Core' do |ss|
-    ss.public_header_files = "include/TriceKitShared/*.h"
+    ss.source_files = "include/TriceKitShared/*.h"
     ss.vendored_libraries  = 'libTriceKitShared.a'
 
     ss.dependency 'AFNetworking/NSURLSession'
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'ZTA' do |ss|
-    ss.public_header_files = "include/TriceKitMapping/*.h"
+    ss.source_files = "include/TriceKitMapping/*.h"
     ss.vendored_libraries  = 'libTriceKitZTA.a'
 
     ss.dependency 'TriceKit/Core'
