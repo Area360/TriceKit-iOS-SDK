@@ -7,6 +7,7 @@
 //
 
 #import "MTLModel.h"
+#import "TriceObjectDescriptor.h"
 #import "TriceTrigger.h"
 #import "TriceBeacon.h"
 #import <MTLJSONAdapter.h>
@@ -67,7 +68,7 @@ NS_INLINE NSString * NSStringFromTriceZoneState(TriceZoneState zone)
 /// The descriptive name for this zone. This matches the name that is provided in the TriceKit CMS.
 @property (nonatomic, strong, readonly) NSString *name;
 
-/// The type of this zone. This corresponds to which class is used, eg. TriceZoneTypeBeaconProximity will be a  TriceBeaconZone class.
+/// The type of this zone. This corresponds to which class is used, eg. TriceZoneTypeBeaconProximity will be a TriceBeaconZone class.
 @property (nonatomic, assign, readonly) TriceZoneType type;
 
 /// A set of TriceTrigger objects.
@@ -87,13 +88,13 @@ NS_INLINE NSString * NSStringFromTriceZoneState(TriceZoneState zone)
 -(void)addTrigger:(TriceTrigger *)trigger;
 
 /**
- *  Gets the TriceTrigger with the specified uid from the triggers property.
+ *  Gets a set of triggers that matches a given descriptor.
  *
- *  @param triggerUid The uid of the trigger.
+ *  @param descriptor The descriptor to evaluate each zone to.
  *
- *  @return The TriceTrigger object with the given uid if it exists, else nil.
+ *  @return A set of TriceTrigger objects that the descriptor has evaluated YES to.
  */
--(TriceTrigger *)triggerWithUid:(NSString *)triggerUid;
+-(NSSet *)triggersMatchingDescriptor:(TriceObjectDescriptor *)descriptor;
 
 /**
  *  Updates the receiver to have the same internal state is the passed in zone. This is so that the receiver will not potentially fire its triggers again due to updating. This also updates the receiver's trigger list. 

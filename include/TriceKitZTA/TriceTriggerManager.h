@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TriceObjectDescriptor.h"
 #import "TriceZone.h"
-
-@class TriceAction;
 
 /**
  *  The TriceTriggerManager class manages the Zones, Triggers and Actions aspect of the TriceKit SDK.
@@ -43,10 +42,21 @@
  *
  *  This method allows you to add programmatically created triggers and actions to zones that exist in the TriceKit CMS. Simply specify the identifiers provided in the CMS and when the trigger fires the action will be executed as well.
  *
- *  @param action     The action to attach.
- *  @param triggerUid The unique identifier of the trigger to attach the action to. This is provided in the TriceKit CMS, or the identifier specified for a TriceTrigger created programatically.
- *  @param zoneUid    The unique identifier of the zone to attach the action to. This is provided in the TriceKit CMS, or the identidier specified for a TriceZone created programatatically.
+ *  The action may attach to multiple triggers if multiple test evaluations return YES. The zones to attach the action to will be evaluated. Then, each TriceZone that passes evaluation will test the list of triggers to be evaluated. The list of TriceTriggers that pass this evaluation will have this action attached to.
+ *
+ *  @param action            The action to attach.
+ *  @param triggerDescriptor A descriptor which identifies the trigger to attach this action to. The action will attach to all triggers that pass evaluation.
+ *  @param zoneDescriptor    A descriptor which identifies the zone to attach this action to. The triggerDescriptor will be evaluated against all zones that pass zoneDescriptor evaluation.
  */
--(void)addAction:(TriceAction *)action toTrigger:(NSString *)triggerUid zone:(NSString *)zoneUid;
+-(void)addAction:(TriceAction *)action toTrigger:(TriceObjectDescriptor *)triggerDescriptor zone:(TriceObjectDescriptor *)zoneDescriptor;
+
+/**
+ *  Gets a set of zones that matches a given descriptor.
+ *
+ *  @param descriptor The descriptor to evaluate each zone to.
+ *
+ *  @return A set of TriceZone objects that the descriptor has evaluated YES to.
+ */
+-(NSSet *)zonesMatchingDescriptor:(TriceObjectDescriptor *)descriptor;
 
 @end
