@@ -8,8 +8,9 @@
 
 #import <CoreLocation/CLLocationManager.h>
 #import <CoreGraphics/CoreGraphics.h>
+#import "TriceSettings.h"
 
-#define TriceLog(str, ...) if (TriceDEBUG) { NSLog(@"TriceKit: " str, ##__VA_ARGS__); }
+#define TriceLog(str, ...) if ([TriceSettings debugEnabled]) { NSLog(@"TriceKit: " str, ##__VA_ARGS__); }
 
 #define TriceNilPtrErrorLog(description)      TriceLog(@"No error pointer passed to %s! ERROR: %@", __PRETTY_FUNCTION__, description)
 #define TriceNilBlockErrorLog(description)    TriceLog(@"No error block assigned to %@! ERROR: %@", NSStringFromClass([self class]), description)
@@ -46,10 +47,6 @@ extern TriceAPIKey    * const TriceKeyDeviceInformation;
 extern TriceAPIValue  * const TriceErrorDomain;
 extern TriceAPIValue  * const TriceBaseUrl;
 extern TriceAPIValue  * const TriceValueSDKVersion;
-extern TriceAPIValue  *       TriceValueUsername;
-extern TriceAPIValue  *       TriceValueAPIKey;
-
-extern BOOL                   TriceDEBUG;
 
 /**
  *  Trice error codes that are used in the TriceKit SDK.
@@ -258,16 +255,6 @@ NS_INLINE BOOL CGSizeApproxEqualToSize(CGSize size1, CGSize size2, CGFloat delta
  *  @return A dictionary containing geo-location information stored in the predefined keys.
  */
 +(NSDictionary *)geoPositionInformation:(CLLocationManager *)locationManager;
-
-/**
- *  Retrieves the Trice configuration out of a given dictionary and returns them if successful.
- *
- *  @param dictionary The dictionary to load the configuration values from.
- *  @param error      If an error occurs, upon return contains an NSError object that describes the problem.
- *
- *  @return A new NSDictionary containing values in the configuration file, or nil if an error occured during loading or verification.
- */
-+(NSDictionary *)triceAPIValuesFromDictionary:(NSDictionary *)dictionary error:(NSError **)error;
 
 @end
     

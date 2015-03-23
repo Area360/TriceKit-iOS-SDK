@@ -60,6 +60,9 @@ typedef NS_ENUM(NSInteger, TriceTriggerEvent){
 /// A list of TriceAction objects.
 @property (nonatomic, strong, readonly) NSArray *actions;
 
+/// Custom point of interest data that is linked to this trigger.
+@property (nonatomic, strong, readonly) NSDictionary *linkedPointOfInterest;
+
 /// The parent zone which contains this trigger.
 @property (nonatomic, weak) TriceZone *zone;
 
@@ -120,6 +123,11 @@ typedef NS_ENUM(NSInteger, TriceTriggerEvent){
  *  Fires this trigger and executes all added TriceAction objects associated with it.
  */
 -(void)fire;
+
+/**
+ *  Stops this trigger from firing. This will only have an effect when called from the TriceTriggerWillFireNotification notification callback.
+ */
+-(void)cancelFiring;
 
 @end
 

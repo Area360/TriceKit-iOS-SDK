@@ -15,10 +15,14 @@
  */
 @interface TriceTriggerManager : NSObject
 
-/**
- *  A set of TriceZone objects, which the device will be monitoring on a call to startMonitoringZones. Once the location of the device has been updated this is populated with the list of zones in the TriceKit CMS.
- */
+/// A set of TriceZone objects, which the device will be monitoring on a call to startMonitoringZones. Once the location of the device has been updated this is populated with the list of zones in the TriceKit CMS.
 @property (nonatomic, strong, readonly) NSSet *zones;
+
+/// A set of TriceZone objects which the device is currently inside of. That is, each zone's state property is TriceZoneStateDwelling.
+@property (nonatomic, strong, readonly) NSSet *zonesInside;
+
+/// If set, this block will be executed whenever an error occurs, such as a failed URL request, or when monitoring beacons is denied. If this property is nil (which it is by default), the error is logged to the console and an alert is displayed to the user.
+@property (nonatomic, copy) void (^handleErrorBlock)(NSError *error);
 
 /**
  *  Starts monitoring for the zones given in the  zones property.
