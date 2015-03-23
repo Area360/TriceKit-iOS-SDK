@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@import UIKit.UILocalNotification;
+#import <UIKit/UILocalNotification.h>
 
 /// A key used in the UILocalNotification userInfo dictionary, whose value is the trigger identifier that caused this action to fire.
 extern NSString * const TriceLocalNotificationTriggerUidKey;

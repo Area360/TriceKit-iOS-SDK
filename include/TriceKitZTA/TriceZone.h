@@ -11,11 +11,9 @@
 #import "TriceTrigger.h"
 #import "TriceBeacon.h"
 #import <MTLJSONAdapter.h>
-
-@import CoreLocation.CLLocation;
-@import CoreLocation.CLRegion;
-@import CoreGraphics;
-@import MapKit.MKPolygon;
+#import <CoreLocation/CLLocation.h>
+#import <CoreLocation/CLRegion.h>
+#import <CoreGraphics/CoreGraphics.h>
 
 /// The notification name which is posted when a zones state property changes. The object is the TriceZone object whose value changed, and the new value is reflected in the property at the time of the notification.
 extern NSString * const TriceZoneStateDidChangeNotification;

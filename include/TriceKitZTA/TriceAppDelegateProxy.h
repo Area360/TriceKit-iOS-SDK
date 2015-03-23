@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@import UIKit.UIApplication;
+#import <UIKit/UIApplication.h>
 
 /**
  *  TriceAppDelegateProxy is a proxy object which enables TriceKit to handle receiving UILocalNotification objects.
