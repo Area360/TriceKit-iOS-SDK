@@ -10,7 +10,7 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import "TriceSettings.h"
 
-#define TriceLog(str, ...) if ([TriceSettings debugEnabled]) { NSLog(@"TriceKit: " str, ##__VA_ARGS__); }
+#define TriceLog(str, ...) if ([[TriceSettings sharedInstance] debugEnabled]) { NSLog(@"TriceKit: " str, ##__VA_ARGS__); }
 
 #define TriceNilPtrErrorLog(description)      TriceLog(@"No error pointer passed to %s! ERROR: %@", __PRETTY_FUNCTION__, description)
 #define TriceNilBlockErrorLog(description)    TriceLog(@"No error block assigned to %@! ERROR: %@", NSStringFromClass([self class]), description)

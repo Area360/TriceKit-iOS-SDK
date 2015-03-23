@@ -10,36 +10,35 @@
 #import <UIKit/UILocalNotification.h>
 
 /**
- *  TriceSettings is a single abstract class that declares preference methods for configuring the TriceKit SDK. You should subclass this class and override all of the declared public methods, without calling the superclass implementation as every abstract method simply invokes doesNotRecogniseSelector:. TriceKit will automatically find and use your subclass if it is defined. If you subclass this class more than once, the class that will be used is undefined.
+ *  TriceSettings is used as a singleton object that holds configuration values for the TriceKit SDK.
  */
 @interface TriceSettings : NSObject
 
 /**
- *  The username value that is provided on the TriceKit CMS.
+ *  Gets the shared instance used for TriceKit settings.
  *
- *  @return The username API value.
+ *  @return The shared instance.
  */
-+(NSString *)username;
++(instancetype)sharedInstance;
 
 /**
- *  The API Key value that is provided on the TriceKit CMS.
- *
- *  @return The API Key value.
+ *  Required. The username value that is provided on the TriceKit CMS.
  */
-+(NSString *)apiKey;
+@property (nonatomic, copy) NSString *username;
 
 /**
- *  Whether or not the TriceKit SDK should log output to console.
- *
- *  @return YES if debugging is enabled, otherwise NO.
+ *  Required. The API Key value that is provided on the TriceKit CMS.
  */
-+(BOOL)debugEnabled;
+@property (nonatomic, copy) NSString *apiKey;
 
 /**
- *  A notification configuration block that will be applied to all local notifications that are constructed through the TriceKit CMS.
- *
- *  @return A block that configures the local notification. Returning nil indicates no configuration.
+ *  Whether or not the TriceKit SDK should log output to console. Default is NO.
  */
-+(void (^)(UILocalNotification *))localNotificationConfigurationBlock;
+@property (nonatomic, assign) BOOL debugEnabled;
+
+/**
+ *  An optional notification configuration block that will be applied to all local notifications that are constructed through the TriceKit CMS. Default is nil.
+ */
+@property (nonatomic, copy) void (^localNotificationConfigurationBlock)(UILocalNotification *notification);
 
 @end
