@@ -37,6 +37,11 @@
 @property (nonatomic, assign) BOOL debugEnabled;
 
 /**
+ *  YES to use the TriceKit production server, otherwise NO to use the testing server. Default is YES. This property will only be read once, so is required to be set during application launch in order to use the testing server.
+ */
+@property (nonatomic, assign) BOOL useProductionServer;
+
+/**
  *  An optional notification configuration block that will be applied to all local notifications that are constructed through the TriceKit CMS. Default is nil.
  */
 @property (nonatomic, copy) void (^localNotificationConfigurationBlock)(UILocalNotification *notification);

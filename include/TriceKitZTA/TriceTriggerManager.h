@@ -24,6 +24,9 @@
 /// If set, this block will be executed whenever an error occurs, such as a failed URL request, or when monitoring beacons is denied. If this property is nil (which it is by default), the error is logged to the console and an alert is displayed to the user.
 @property (nonatomic, copy) void (^handleErrorBlock)(NSError *error);
 
+/// If this property is YES, TriceTriggerManager will cache its most recent list of zones by encoding to disk so that they may be reloaded when offline.
+@property (nonatomic, assign) BOOL allowEncodingZonesToDisk;
+
 /**
  *  Starts monitoring for the zones given in the  zones property.
  */

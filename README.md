@@ -14,11 +14,10 @@ In your Podfile
 pod 'TriceKit'
 ```
 
-After installation, add to your projects Info.plist the TriceKit properties.
-
-```ruby
-TriceUsername : <Your username provided by TriceKit>
-TriceAPIKey   : <Your API Key provided by TriceKit>
+In your AppDelegate.m set your API key and username that is provided from the TriceKit CMS.
+```objective-c
+[[TriceSettings sharedInstance] setApiKey:<#API_KEY#>];
+[[TriceSettings sharedInstance] setUsername:<#USERNAME#>];
 ```
 
 Additionally, you may add TriceDebug with a boolean value of YES to enable the SDK to log information to the console.
@@ -30,4 +29,9 @@ Additionally, you may add TriceDebug with a boolean value of YES to enable the S
 
 self.triggerManager = [TriceTriggerManager new];
 [self.triggerManager startMonitoringZones];
+```
+
+To allow TriceKit to handle local notifications that are generated from it, add to your AppDelegate.m:
+```objective-c
+[TriceAppDelegateProxy handleTriceKitLocalNotifications];
 ```

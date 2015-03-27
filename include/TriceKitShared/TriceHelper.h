@@ -45,7 +45,8 @@ extern TriceAPIKey    * const TriceKeySDKVersion;
 extern TriceAPIKey    * const TriceKeyDeviceInformation;
 
 extern TriceAPIValue  * const TriceErrorDomain;
-extern TriceAPIValue  * const TriceBaseUrl;
+extern TriceAPIValue  * const TriceProductionBaseUrl;
+extern TriceAPIValue  * const TriceTestingBaseUrl;
 extern TriceAPIValue  * const TriceValueSDKVersion;
 
 /**
