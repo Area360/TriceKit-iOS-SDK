@@ -78,6 +78,9 @@ NS_INLINE NSString * NSStringFromTriceZoneState(TriceZoneState zone)
 /// The amount of time that the user has been dwelling inside the zone, or the amount of time that the state of this zone has been in TriceZoneStateDwelling.
 @property (nonatomic, assign, readonly) NSTimeInterval currentDwellTime;
 
+/// The distance in metres that the device is currently away from this zone. A negative value indicates the distance could not be calculated.
+@property (nonatomic, assign, readonly) CLLocationDistance currentDistanceAway;
+
 /**
  *  Adds a trigger to this zone.
  *
