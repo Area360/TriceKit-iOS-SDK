@@ -1,4 +1,4 @@
-<p align="center">![tricelogo](https://cloud.githubusercontent.com/assets/6678136/6930126/f54d239c-d85c-11e4-8e1c-3e156646b969.png)</p>
+<p align="center"> ![tricelogo](https://cloud.githubusercontent.com/assets/6678136/6930126/f54d239c-d85c-11e4-8e1c-3e156646b969.png) </p>
 
 Overview of TriceKit goes here. Coming soon
 
@@ -161,6 +161,14 @@ TriceTrigger objects post both a TriceTriggerWillFireNotification and TriceTrigg
 - (void)zoneDidChangeState:(NSNotification *)notification
 {
     // Zone was entered or exited, relevant triggers may fire.
+    
+    TriceZone *zone = notification.object;
+    
+    if (zone.state == TriceZoneStateEntered || zone.state == TriceZoneStateDwelling) { // We are now inside!
+        self.view.backgroundColor = [UIColor greenColor];
+    } else { // We are now outside!
+        self.view.backgroundColor = [UIColor redColor];
+    }
 }
 
 - (void)triggerWillFire:(NSNotification *)notification
