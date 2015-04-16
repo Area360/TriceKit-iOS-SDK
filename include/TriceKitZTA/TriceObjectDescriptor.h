@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *  An instance of TriceObjectDescriptor forms a basis for describing TriceKit model objects, specifically a TriceZone or TriceTrigger object. You construct an instance of this class to describe a model, and pass that to another class (such as TriceTriggerManager) to retrieve the desired instance.
  */
@@ -51,3 +53,5 @@
 -(BOOL)evaluateWithObject:(id)object;
 
 @end
+
+NS_ASSUME_NONNULL_END

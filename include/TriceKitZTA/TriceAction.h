@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UILocalNotification.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
+@class TriceTrigger;
+
 /// A key used in the UILocalNotification userInfo dictionary, whose value is the trigger identifier that caused this action to fire.
 extern NSString * const TriceLocalNotificationTriggerUidKey;
 
@@ -23,7 +27,10 @@ typedef NS_ENUM(NSInteger, TriceURLCallbackType){
 /**
  *  The TriceAction class encapsulates an action that is executed upon firing of a TriceTrigger.
  */
-@interface TriceAction : NSObject
+@interface TriceAction : NSObject <NSCopying>
+
+/// The trigger that this action has been attached to, or nil if it has not been attached yet.
+@property (nonatomic, weak) TriceTrigger *trigger;
 
 /**
  *  Creates a new TriceAction object.
@@ -52,7 +59,7 @@ typedef NS_ENUM(NSInteger, TriceURLCallbackType){
  *
  *  @return An initialized instance.
  */
-+(instancetype)urlCallbackAction:(TriceURLCallbackType)type url:(NSString *)url parameters:(NSDictionary *)parameters;
++(instancetype)urlCallbackAction:(TriceURLCallbackType)type url:(NSString *)url parameters:(nullable NSDictionary *)parameters;
 
 /**
  *  Executes this action.
@@ -60,3 +67,5 @@ typedef NS_ENUM(NSInteger, TriceURLCallbackType){
 -(void)fire;
 
 @end
+
+NS_ASSUME_NONNULL_END

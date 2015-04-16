@@ -15,6 +15,8 @@
 #import <CoreLocation/CLRegion.h>
 #import <CoreGraphics/CoreGraphics.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /// The notification name which is posted when a zones state property changes. The object is the TriceZone object whose value changed, and the new value is reflected in the property at the time of the notification.
 extern NSString * const TriceZoneStateDidChangeNotification;
 
@@ -38,14 +40,14 @@ typedef NS_ENUM(NSInteger, TriceZoneState){
     TriceZoneStateDwelling          ///< The device is currently dwelling inside of a zone.
 };
 
-NS_INLINE NSString * NSStringFromTriceZoneState(TriceZoneState zone)
+NS_INLINE NSString * NSStringFromTriceZoneState(TriceZoneState state)
 {
-    switch (zone) {
-        case TriceZoneStateOutside:  return @"TriceZoneStateOutside";
-        case TriceZoneStateEntered:  return @"TriceZoneStateEntered";
-        case TriceZoneStateDwelling: return @"TriceZoneStateDwelling";
-        case TriceZoneStateExited:   return @"TriceZoneStateExited";
-        default:                     return @"Invalid TriceZoneState";
+    switch (state) {
+        case TriceZoneStateOutside:  return @"Outside";
+        case TriceZoneStateEntered:  return @"Entered";
+        case TriceZoneStateDwelling: return @"Dwelling";
+        case TriceZoneStateExited:   return @"Exited";
+        default:                     return @"Invalid";
     }
 }
 
@@ -204,3 +206,5 @@ NS_INLINE NSString * NSStringFromTriceZoneState(TriceZoneState zone)
 @interface TriceIndoorZone : TriceZone
 
 @end
+
+NS_ASSUME_NONNULL_END

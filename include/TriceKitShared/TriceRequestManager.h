@@ -9,6 +9,8 @@
 #import "AFHTTPSessionManager.h"
 #import <CoreLocation/CLLocationManager.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class TriceBuilding, TriceFloor, TriceMarker, TriceBeacon, TriceDirections, TriceZone, TriceTrigger;
 
 /**
@@ -30,14 +32,14 @@
  *
  *  @return The scheduled or executing task if it exists, otherwise  nil.
  */
-+(NSURLSessionDownloadTask *)requestTaskForUrl:(NSURL *)url;
++(nullable NSURLSessionDownloadTask *)requestTaskForUrl:(NSURL *)url;
 
 /**
  *  Helpful wrapper around the standard request failure blocks.
  *
  *  @param failure The failure block passed into TriceRequestManager.
  */
-+(void (^)(NSURLSessionDataTask *, NSError *))failureBlock:(void (^)(NSError *error))failure;
++(void (^)(NSURLSessionDataTask *, NSError *))failureBlock:(nullable void (^)(NSError *error))failure;
 
 /**
  *  Downloads an image from a given URL asynchronously, caching it once it completes. If a cached version already exists then that is returned through the success block before this method returns.
@@ -47,8 +49,8 @@
  *  @param failure  If something went wrong during the download, that is described in the NSError object that is passed back through this failure callback block.
  */
 +(void)requestImage:(NSString *)imageUrl
-            success:(void (^)(UIImage *image))success
-            failure:(void (^)(NSError *error))failure;
+            success:(nullable void (^)(UIImage *image))success
+            failure:(nullable void (^)(NSError *error))failure;
 
 #pragma mark - Beacons
 
@@ -62,8 +64,8 @@
  *  @return The task that was created for this request.
  */
 +(NSURLSessionDataTask *)requestBeaconsUpload:(NSArray *)beacons
-                                      success:(void (^)())success
-                                      failure:(void (^)(NSError *error))failure;
+                                      success:(nullable void (^)())success
+                                      failure:(nullable void (^)(NSError *error))failure;
 
 /**
  *  Request sent to the TriceKit server to confirm that a beacon has been successfully updated.
@@ -75,8 +77,8 @@
  *  @return The task that was created for this request.
  */
 +(NSURLSessionDataTask *)requestBeaconUpdateConfirmation:(TriceBeacon *)beacon
-                                                 success:(void (^)())success
-                                                 failure:(void (^)(NSError *error))failure;
+                                                 success:(nullable void (^)())success
+                                                 failure:(nullable void (^)(NSError *error))failure;
 
 /**
  *  Requests the list of beacons that are close to the device. For this to succeed a  CLLocationManager must have successfully updated the user's location at least once.
@@ -86,8 +88,8 @@
  *
  *  @return The task that was created for this request.
  */
-+(NSURLSessionDataTask *)requestBeaconsNearbyOnSuccess:(void (^)(NSArray *beacons))success
-                                               failure:(void (^)(NSError *error))failure;
++(NSURLSessionDataTask *)requestBeaconsNearbyOnSuccess:(nullable void (^)(NSArray *beacons))success
+                                               failure:(nullable void (^)(NSError *error))failure;
 
 /**
  *  Sends a request to the TriceKit server to indicate that the device has come in range of a beacon that has been previously fetched.
@@ -99,7 +101,9 @@
  *  @return The task that was created for this request.
  */
 +(NSURLSessionDataTask *)requestBeaconPing:(TriceBeacon *)beacon
-                                   success:(void (^)())success
-                                   failure:(void (^)(NSError *error))failure;
+                                   success:(nullable void (^)())success
+                                   failure:(nullable void (^)(NSError *error))failure;
 
 @end
+
+NS_ASSUME_NONNULL_END

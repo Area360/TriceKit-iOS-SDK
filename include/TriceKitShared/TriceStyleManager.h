@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 typedef NSString TriceColourKey;
 typedef NSString TriceFontKey;
 
@@ -73,3 +75,5 @@ extern TriceFontKey   * const TriceFontKeySecondary;
 +(UIFont *)fontForKey:(TriceFontKey *)key size:(CGFloat)size;
 
 @end
+
+NS_ASSUME_NONNULL_END

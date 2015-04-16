@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIApplication.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *  TriceAppDelegateProxy is a proxy object which enables TriceKit to handle receiving UILocalNotification objects.
  */
@@ -24,3 +26,5 @@
 +(void)handleTriceKitLocalNotifications;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UILocalNotification.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *  TriceSettings is used as a singleton object that holds configuration values for the TriceKit SDK.
  */
@@ -44,6 +46,8 @@
 /**
  *  An optional notification configuration block that will be applied to all local notifications that are constructed through the TriceKit CMS. Default is nil.
  */
-@property (nonatomic, copy) void (^localNotificationConfigurationBlock)(UILocalNotification *notification);
+@property (nonatomic, copy, nullable) void (^localNotificationConfigurationBlock)(UILocalNotification *notification);
 
 @end
+
+NS_ASSUME_NONNULL_END

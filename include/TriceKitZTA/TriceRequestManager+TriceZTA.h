@@ -8,6 +8,8 @@
 
 #import "TriceRequestManager.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *  This category on TriceRequestManager adds zones, triggers and actions related requests to the TriceKit SDK.
  */
@@ -23,8 +25,8 @@
  *  @return The task that was created for this request.
  */
 +(NSURLSessionDataTask *)requestZonesNearbyWithDistanceFilter:(CGFloat)distance
-                                                      success:(void (^)(NSArray *zones))success
-                                                      failure:(void (^)(NSError *error))failure;
+                                                      success:(nullable void (^)(NSArray *zones))success
+                                                      failure:(nullable void (^)(NSError *error))failure;
 
 /**
  *  Notifies the TriceKit server that a zone has been either entered or exited by the device.
@@ -36,7 +38,9 @@
  *  @return The task that was created for this request.
  */
 +(NSURLSessionDataTask *)requestZonePing:(TriceZone *)zone
-                                 success:(void (^)())success
-                                 failure:(void (^)(NSError *error))failure;
+                                 success:(nullable void (^)())success
+                                 failure:(nullable void (^)(NSError *error))failure;
 
 @end
+
+NS_ASSUME_NONNULL_END

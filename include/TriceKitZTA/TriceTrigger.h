@@ -10,6 +10,8 @@
 #import "TriceAction.h"
 #import <MTLJSONAdapter.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /// The notification name which is posted when a trigger has activated and is about to perform its associated actions. The object is the TriceTrigger object that is about to fire.
 extern NSString * const TriceTriggerWillFireNotification;
 
@@ -131,3 +133,4 @@ typedef NS_ENUM(NSInteger, TriceTriggerEvent){
 
 @end
 
+NS_ASSUME_NONNULL_END

@@ -12,6 +12,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *  The manufacturer of a particular iBeacon.
  */
@@ -21,6 +23,17 @@ typedef NS_ENUM(NSInteger, TriceBeaconManufacturer) {
     TriceBeaconManufacturerKontakt,         ///< Kontact.
     TriceBeaconManufacturerSensoro          ///< Sensoro.
 };
+
+NS_INLINE NSString * NSStringFromCLProximity(CLProximity proximity)
+{
+    switch (proximity) {
+        case CLProximityImmediate: return @"Immediate";
+        case CLProximityNear:      return @"Near";
+        case CLProximityFar:       return @"Far";
+        case CLProximityUnknown:
+        default:                   return @"Unknown";
+    }
+}
 
 /**
  *  TriceBeacon represents a Bluetooth iBeacon.
@@ -38,6 +51,12 @@ typedef NS_ENUM(NSInteger, TriceBeaconManufacturer) {
 
 /// The relative distance to the beacon.
 @property (nonatomic, assign, readonly) CLProximity proximity;
+
+/// The relative distance to the beacon, calculated using the beacon's current RSSI value.
+@property (nonatomic, assign, readonly) CLProximity rssiProximity;
+
+/// The relative distance to the beacon, calculated using the beacon's current accuracy value.
+@property (nonatomic, assign, readonly) CLProximity distanceProximity;
 
 /// The accuracy of the proximity value, measured in meters from the beacon.
 @property (nonatomic, assign, readonly) CLLocationAccuracy accuracy;
@@ -131,20 +150,6 @@ typedef NS_ENUM(NSInteger, TriceBeaconManufacturer) {
  */
 -(BOOL)isEqualToPeripheral:(CBPeripheral *)peripheral;
 
-/**
- *  Calculates a CLProximity value from the rssi property.
- *
- *  @return The caculated CLProximity value.
- */
--(CLProximity)rssiProximity;
-
-/**
- *  Calculates a CLProximity value from the accuracy property.
- *
- *  @return The calculated CLProximity value.
- */
--(CLProximity)distanceProximity;
-
 @end
 
 #pragma mark - CLBeacon Extension
@@ -162,3 +167,5 @@ typedef NS_ENUM(NSInteger, TriceBeaconManufacturer) {
 -(NSString *)identifier;
 
 @end
+
+NS_ASSUME_NONNULL_END

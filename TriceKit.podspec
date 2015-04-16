@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                   = "TriceKit"
-  s.version                = "0.2.6"
+  s.version                = "0.3"
   s.summary                = "The TriceKit iOS SDK does things. Better summary coming soon."
 
   s.description            = <<-DESC
@@ -21,13 +21,14 @@ Pod::Spec.new do |s|
   s.source                 = { :git => "https://github.com/stqry/TriceKit.git", :tag => s.version }
   s.requires_arc           = true
   s.xcconfig               = { 'OTHER_LDFLAGS' => '-lObjC -lc++' }
+  s.source_files           = 'include/TriceKit.h'
 
   s.subspec 'Core' do |ss|
     ss.source_files = "include/TriceKitShared/*.h"
     ss.vendored_libraries  = 'libTriceKitShared.a'
 
-    ss.dependency 'AFNetworking/NSURLSession'
-    ss.dependency 'Mantle'
+    ss.dependency 'AFNetworking/NSURLSession', '~> 2.5'
+    ss.dependency 'Mantle', '~> 1.5'
   end
 
   s.subspec 'ZTA' do |ss|

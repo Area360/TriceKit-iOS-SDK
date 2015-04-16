@@ -10,6 +10,8 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import "TriceSettings.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 #define TriceLog(str, ...) if ([[TriceSettings sharedInstance] debugEnabled]) { NSLog(@"TriceKit: " str, ##__VA_ARGS__); }
 
 #define TriceNilPtrErrorLog(description)      TriceLog(@"No error pointer passed to %s! ERROR: %@", __PRETTY_FUNCTION__, description)
@@ -239,7 +241,7 @@ NS_INLINE BOOL CGSizeApproxEqualToSize(CGSize size1, CGSize size2, CGFloat delta
  *
  *  @return The SSID of the current WiFi network, or nil if it is not currently connected to any networks.
  */
-+(NSString *)networkSSID;
++(nullable NSString *)networkSSID;
 
 /**
  *  Gets the stored unique identifier for the device, creating one if it does not already exist.
@@ -255,10 +257,12 @@ NS_INLINE BOOL CGSizeApproxEqualToSize(CGSize size1, CGSize size2, CGFloat delta
  *
  *  @return A dictionary containing geo-location information stored in the predefined keys.
  */
-+(NSDictionary *)geoPositionInformation:(CLLocationManager *)locationManager;
++(nullable NSDictionary *)geoPositionInformation:(CLLocationManager *)locationManager;
 
 @end
     
 #ifdef __cplusplus
 }
 #endif
+
+NS_ASSUME_NONNULL_END
