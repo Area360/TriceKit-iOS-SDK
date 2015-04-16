@@ -1,4 +1,4 @@
-<p align="center"><img src="https://cloud.githubusercontent.com/assets/6678136/6930126/f54d239c-d85c-11e4-8e1c-3e156646b969.png" alt="TriceKit logo" /></p>
+<p align="center"> ![tricelogo](https://cloud.githubusercontent.com/assets/6678136/6930126/f54d239c-d85c-11e4-8e1c-3e156646b969.png) </p>
 
 Overview of TriceKit goes here. Coming soon
 
@@ -184,6 +184,16 @@ TriceTrigger objects post both a TriceTriggerWillFireNotification and TriceTrigg
     TriceTrigger *trigger = notification.object;
     NSLog(@"A trigger fired! %@", trigger);
 }
+```
+
+###### Pausing or stopping notifications:
+
+You can temporarily pause notifications by displaying by registering for the TriceTriggerWillFireNotification notification and cancelling all triggers from firing. See example above about how to do this.
+
+To stop for a more extended period, then it is recommended that you stop TriceTriggerManager from monitoring by calling:
+
+```objective-c
+[self.triggerManager stopMonitoringZones];
 ```
 
 ###### Offline support:
