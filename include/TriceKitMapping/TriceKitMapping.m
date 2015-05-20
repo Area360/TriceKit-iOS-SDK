@@ -1,0 +1,1 @@
+// Bogus empty file to allow libTriceKitMapping.a to compile.

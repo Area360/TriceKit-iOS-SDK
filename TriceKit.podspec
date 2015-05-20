@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.source_files           = 'include/TriceKit.{h,m}'
 
   s.subspec 'Core' do |ss|
-    ss.source_files = "include/TriceKitShared/*.h"
+    ss.source_files = 'include/TriceKitShared/*.{h,m}'
     ss.vendored_libraries  = 'libTriceKitShared.a'
 
     ss.dependency 'AFNetworking/NSURLSession', '~> 2.5'
@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'ZTA' do |ss|
-    ss.source_files = "include/TriceKitZTA/*.h"
+    ss.source_files = 'include/TriceKitZTA/*.{h,m}'
     ss.vendored_libraries  = 'libTriceKitZTA.a'
 
     ss.dependency 'TriceKit/Core'
@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Mapping' do |ss|
 
-    ss.source_files        = "include/TriceKitMapping/*.h"
+    ss.source_files        = 'include/TriceKitMapping/*.{h,m}'
     ss.vendored_libraries  = 'libTriceKitMapping.a'
 
     ss.dependency 'TriceKit/Core'

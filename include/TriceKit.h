@@ -9,9 +9,16 @@
 #ifndef TriceKit_TriceKit_h
 #define TriceKit_TriceKit_h
 
-#import <TriceSettings.h>
-#import <TriceStyleManager.h>
-#import <TriceTriggerManager.h>
-#import <TriceAppDelegateProxy.h>
+#ifdef COCOAPODS_POD_AVAILABLE_TriceKit_Core
+#import "TriceKitShared.h"
+#endif
+
+#ifdef COCOAPODS_POD_AVAILABLE_TriceKit_ZTA
+#import "TriceKitZTA.h"
+#endif
+
+#ifdef COCOAPODS_POD_AVAILABLE_TriceKit_Mapping
+#import "TriceKitMapping.h"
+#endif
 
 #endif
