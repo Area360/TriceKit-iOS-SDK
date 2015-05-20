@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                   = "TriceKit"
-  s.version                = "0.3.0"
+  s.version                = "0.3.4"
   s.summary                = "The TriceKit iOS SDK does things. Better summary coming soon."
 
   s.description            = <<-DESC
@@ -36,6 +36,18 @@ Pod::Spec.new do |s|
     ss.vendored_libraries  = 'libTriceKitZTA.a'
 
     ss.dependency 'TriceKit/Core'
+  end
+
+  s.subspec 'Mapping' do |ss|
+
+    ss.public_header_files = "include/TriceKitMapping/*.h"
+    ss.vendored_libraries  = 'libTriceKitMapping.a'
+
+    ss.dependency 'TriceKit/Core'
+    ss.dependency 'BFPaperView'
+    ss.dependency 'BFPaperButton'
+    ss.dependency 'Masonry'
+    ss.dependency 'PocketSVG'
   end
 
 end

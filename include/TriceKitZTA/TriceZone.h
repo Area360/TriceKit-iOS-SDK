@@ -63,16 +63,16 @@ NS_INLINE NSString * NSStringFromTriceZoneState(TriceZoneState state)
 @interface TriceZone : MTLModel <MTLJSONSerializing>
 
 /// A unique identifier that is provided from the TriceKit CMS. Equality is based solely on this property, so calling isEqual: on this object with another TriceZone object with the same uid will return YES.
-@property (nonatomic, strong, readonly) NSString *uid;
+@property (nonatomic, copy, readonly)   NSString *uid;
 
 /// The descriptive name for this zone. This matches the name that is provided in the TriceKit CMS.
-@property (nonatomic, strong, readonly) NSString *name;
+@property (nonatomic, copy)             NSString *name;
 
 /// The type of this zone. This corresponds to which class is used, eg. TriceZoneTypeBeaconProximity will be a TriceBeaconZone class.
 @property (nonatomic, assign, readonly) TriceZoneType type;
 
 /// A set of TriceTrigger objects.
-@property (nonatomic, strong, readonly) NSSet *triggers;
+@property (nonatomic, copy, readonly)   NSSet *triggers;
 
 /// The current state that this zone is in. For example if the user has entered this zone then this value will be TriceZoneStateEntered, and on the next update TriceZoneStateDwelling.
 @property (nonatomic, assign, readonly) TriceZoneState state;
@@ -160,7 +160,7 @@ NS_INLINE NSString * NSStringFromTriceZoneState(TriceZoneState state)
 @interface TriceGeoPolygonZone : TriceGeoZone
 
 /// An array of coordinates that make up the polygon. Each object is a CLLocationCoordinate2D wrapped in a NSValue.
-@property (nonatomic, strong, readonly) NSArray *polygonCoordinates;
+@property (nonatomic, copy, readonly)   NSArray *polygonCoordinates;
 
 /**
  *  Constructs a new TriceGeoPolygonZone object. This constructor is used to create an internal testing zone so that you may easily test and experiment with zones.

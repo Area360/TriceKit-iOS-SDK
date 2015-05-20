@@ -22,12 +22,24 @@ extern NSString * const TriceTriggerDidFireNotification;
  *  The types of events that can cause a trigger to fire.
  */
 typedef NS_ENUM(NSInteger, TriceTriggerEvent){
-    TriceTriggerEventUnknown,           ///< Unknown trigger event or was not set.
+    TriceTriggerEventUnknown = 0,       ///< Unknown trigger event or was not set.
     TriceTriggerEventEnter,             ///< Entering a zone will cause the trigger to fire.
     TriceTriggerEventExit,              ///< Exiting a zone will cause the trigger to fire.
     TriceTriggerEventDwell,             ///< Dwelling in a zone for a certain time period.
     TriceTriggerEventAccelerometer      ///< Trigger will fire when the beacon is in motion.
 };
+
+NS_INLINE NSString * NSStringFromTriceTriggerEvent(TriceTriggerEvent event)
+{
+    switch (event) {
+        case TriceTriggerEventEnter:         return @"Enter";
+        case TriceTriggerEventExit:          return @"Exit";
+        case TriceTriggerEventDwell:         return @"Dwell";
+        case TriceTriggerEventAccelerometer: return @"Accelerometer";
+        case TriceTriggerEventUnknown:
+        default:                             return @"Unknown";
+    }
+}
 
 @class TriceZone;
 
@@ -39,10 +51,10 @@ typedef NS_ENUM(NSInteger, TriceTriggerEvent){
 @interface TriceTrigger : MTLModel <MTLJSONSerializing>
 
 /// A unique identifier that is provided from the TriceKit CMS. Equality is based solely on this property, so calling  isEqual: on this object with another  TriceTrigger object with the same uid will return YES.
-@property (nonatomic, strong, readonly) NSString *uid;
+@property (nonatomic, copy, readonly)   NSString *uid;
 
 /// The descriptive name for this trigger. This matches the name that is provided in the TriceKit CMS.
-@property (nonatomic, strong, readonly) NSString *name;
+@property (nonatomic, copy)             NSString *name;
 
 /// The minimum time in seconds that should pass before this trigger should be able to fire again.
 @property (nonatomic, assign, readonly) NSTimeInterval frequency;
@@ -60,10 +72,10 @@ typedef NS_ENUM(NSInteger, TriceTriggerEvent){
 @property (nonatomic, assign, readonly) NSTimeInterval dwellTime;
 
 /// A list of TriceAction objects.
-@property (nonatomic, strong, readonly) NSArray *actions;
+@property (nonatomic, copy, readonly)   NSArray *actions;
 
 /// Custom point of interest data that is linked to this trigger.
-@property (nonatomic, strong, readonly) NSDictionary *linkedPointOfInterest;
+@property (nonatomic, copy, readonly)   NSDictionary *linkedPointOfInterest;
 
 /// The parent zone which contains this trigger.
 @property (nonatomic, weak) TriceZone *zone;

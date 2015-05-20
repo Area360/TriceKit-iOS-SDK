@@ -48,9 +48,9 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param success  A callback block that returns the image through its only parameter.
  *  @param failure  If something went wrong during the download, that is described in the NSError object that is passed back through this failure callback block.
  */
-+(void)requestImage:(NSString *)imageUrl
-            success:(nullable void (^)(UIImage *image))success
-            failure:(nullable void (^)(NSError *error))failure;
++(NSURLSessionDownloadTask *)requestImage:(NSString *)imageUrl
+                                  success:(nullable void (^)(UIImage *image))success
+                                  failure:(nullable void (^)(NSError *error))failure;
 
 #pragma mark - Beacons
 

@@ -65,13 +65,13 @@ NS_INLINE NSString * NSStringFromCLProximity(CLProximity proximity)
 @property (nonatomic, assign, readonly) NSInteger rssi;
 
 /// An identifier constructed from the major and minor properties. Useful for using as a key to store this beacon in a dictionary. This identifier matches the property CLBeacon -identifier defined in the category CLBeacon (TriceIdentifier).
-@property (nonatomic, strong, readonly) NSString *identifier;
+@property (nonatomic, copy, readonly)   NSString *identifier;
 
 /// The identifier used by the TriceKit server for this beacon.
-@property (nonatomic, strong, readonly) NSString *serverId;
+@property (nonatomic, copy, readonly)   NSString *serverId;
 
 /// The MAC address of the beacon.
-@property (nonatomic, strong, readonly) NSString *macAddress;
+@property (nonatomic, copy, readonly)   NSString *macAddress;
 
 /// The transmitting power level that this beacon is set to.
 @property (nonatomic, assign, readonly) NSInteger power;
@@ -86,7 +86,7 @@ NS_INLINE NSString * NSStringFromCLProximity(CLProximity proximity)
 @property (nonatomic, assign, readonly) BOOL shouldConnectOnPing;
 
 /// The current connection status to the beacon. Updated by TriceBeaconManager when connecting.
-@property (nonatomic, assign) CBPeripheralState connectionState;
+@property (nonatomic, assign)           CBPeripheralState connectionState;
 
 /// Whether this beacon is currently physically moving.
 @property (nonatomic, assign, getter=isMoving) BOOL moving;
@@ -98,10 +98,10 @@ NS_INLINE NSString * NSStringFromCLProximity(CLProximity proximity)
 @property (nonatomic, assign, readonly) NSInteger interval;
 
 /// The hardware version of the beacon.
-@property (nonatomic, strong, readonly) NSString *hardwareVersion;
+@property (nonatomic, copy, readonly)   NSString *hardwareVersion;
 
 /// The firmware version of the beacon.
-@property (nonatomic, strong, readonly) NSString *firmwareVersion;
+@property (nonatomic, copy, readonly)   NSString *firmwareVersion;
 
 /**
  *  Programmatially creates a new TriceBeacon that may be monitored and ranged.

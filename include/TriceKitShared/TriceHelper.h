@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 STQRY. All rights reserved.
 //
 
+#import <CoreBluetooth/CoreBluetooth.h>
 #import <CoreLocation/CLLocationManager.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import "TriceSettings.h"
@@ -105,6 +106,20 @@ BOOL CLLocationCoordinate2DIsInsidePolygon(CLLocationCoordinate2D testCoordinate
 UIViewController * topViewController();
 
 /**
+ *  Whether or not any CLLocationManager objects used in TriceKit should request authorization before usage. This checks for the appropriate key (NSLocationWhenInUseUsageDescription) in the application's main info.plist as well as the current authorization status.
+ *
+ *  @return YES if TriceKit should request authorization for only when the app is in use.
+ */
+BOOL locationManagerShouldRequestWhenInUseAuthorization();
+
+/**
+ *  Whether or not any CLLocationManager objects used in TriceKit should request authorization before usage. This checks for the appropriate key (NSLocationAlwaysUsageDescription) in the application's main info.plist as well as the current authorization status.
+ *
+ *  @return YES if TriceKit should request always authorization.
+ */
+BOOL locationManagerShouldRequestAlwaysAuthorization();
+
+/**
  *  Tests any object presented to it for it's emptiness. For example an NSArray with zero elements is considered empty.
  *
  *  @param thing The object to test.
@@ -153,6 +168,22 @@ NS_INLINE int nextPowerOfTwo(int a) {
     return b;
 }
     
+NS_INLINE CGSize sizeNearestToPowerOfTwo(CGSize size) {
+    unsigned int w = ABS(size.width), h = ABS(size.height);
+    if (w == 0 && (h == 0 || (isPowerOfTwo(h))) && h == 0 && (w == 0 || isPowerOfTwo(w))) {
+        return CGSizeMake(w, h);
+    }
+    unsigned int y = h, x = w, a = 0, b = 0;
+    while (x >>= 1) { b++; }
+    while (y >>= 1) { a++; }
+    unsigned int d = (y & (1 << (b - 1))) ? 0 : 1;
+    unsigned int c = (x & (1 << (a - 1))) ? 0 : 1;
+    w = nextPowerOfTwo(w) >> d;
+    h = nextPowerOfTwo(h) >> c;
+    
+    return CGSizeMake(w, h);
+}
+
 /**
  *  Reverses an array of characters. This does not create and return new array, instead it directly modifies the array that is passed in.
  *
@@ -223,6 +254,22 @@ NS_INLINE BOOL CGSizeApproxEqualToSize(CGSize size1, CGSize size2, CGFloat delta
     return (relDiff(size1.width,  size2.width ) <= delta &&
             relDiff(size1.height, size2.height) <= delta);
 }
+
+/**
+ *  Maps a CBCentralManagerState to a TriceErrorCode if the current state of the devices Bluetooth may cause an error.
+ *
+ *  @param state The current state of the Bluetooth manager.
+ *
+ *  @return A TriceErrorCode that is valid only if the Bluetooth manager is in a error state, otherwise 0.
+ */
+NS_INLINE TriceErrorCode TriceErrorCodeFromCBCentralManagerState(CBCentralManagerState state) {
+    switch (state) {
+        case CBCentralManagerStateUnsupported:  return TriceBluetoothUnsupported;
+        case CBCentralManagerStateUnauthorized: return TriceBluetoothUnauthorized;
+        case CBCentralManagerStatePoweredOff:   return TriceBluetoothPoweredOff;
+        default:                                return (TriceErrorCode)0;
+    }
+};
 
 /**
  *  This class provides helper methods and constants that are used throughout TriceKit.
