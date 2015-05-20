@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.source                 = { :git => "https://github.com/stqry/TriceKit.git", :tag => s.version }
   s.requires_arc           = true
   s.xcconfig               = { 'OTHER_LDFLAGS' => '-lObjC -lc++' }
-  s.source_files           = 'include/TriceKit.h'
+  s.source_files           = 'include/TriceKit.{h,m}'
 
   s.subspec 'Core' do |ss|
     ss.source_files = "include/TriceKitShared/*.h"
@@ -40,14 +40,14 @@ Pod::Spec.new do |s|
 
   s.subspec 'Mapping' do |ss|
 
-    ss.public_header_files = "include/TriceKitMapping/*.h"
+    ss.source_files        = "include/TriceKitMapping/*.h"
     ss.vendored_libraries  = 'libTriceKitMapping.a'
 
     ss.dependency 'TriceKit/Core'
-    ss.dependency 'BFPaperView'
-    ss.dependency 'BFPaperButton'
-    ss.dependency 'Masonry'
-    ss.dependency 'PocketSVG'
+    ss.dependency 'BFPaperView', '~> 2.1'
+    ss.dependency 'BFPaperButton', '~> 2.0'
+    ss.dependency 'Masonry', '~> 0.6'
+    ss.dependency 'PocketSVG', '~> 0.6'
   end
 
 end
