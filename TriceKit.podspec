@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                   = "TriceKit"
-  s.version                = "0.3.4"
+  s.version                = "0.3.5"
   s.summary                = "The TriceKit iOS SDK does things. Better summary coming soon."
 
   s.description            = <<-DESC
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.homepage               = "http://tricekit.com/"
   s.license                = { :type => 'none', :text => "Copyright 2015 STQRY" }
   s.author                 = { "Jake" => "jake.bellamy@stqry.com" }
-  s.platform               = :ios, "7.0"
+  s.platform               = :ios, '7.0'
   s.source                 = { :git => "https://github.com/stqry/TriceKit.git", :tag => s.version }
   s.requires_arc           = true
   s.xcconfig               = { 'OTHER_LDFLAGS' => '-lObjC -lc++' }
@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Mapping' do |ss|
 
-    ss.source_files        = 'include/TriceKitMapping/*.{h,m}'
+    ss.source_files = 'include/TriceKitMapping/*.{h,m}'
     ss.vendored_libraries  = 'libTriceKitMapping.a'
 
     ss.dependency 'TriceKit/Core'
