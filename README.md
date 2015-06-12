@@ -1,6 +1,6 @@
 <p align="center"><img src="https://cloud.githubusercontent.com/assets/6678136/6930126/f54d239c-d85c-11e4-8e1c-3e156646b969.png" alt="TriceKit logo" /></p>
 
-Overview of TriceKit goes here. Coming soon
+This is the TriceKit iOS SDK that delivers delightful experiences in conjunction with the [TriceKit management system](http://tricekit.com).
 
 ## Installation
 
