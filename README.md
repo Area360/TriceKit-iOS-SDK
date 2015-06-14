@@ -1,4 +1,4 @@
-<p align="center"><img src="https://cloud.githubusercontent.com/assets/6678136/6930126/f54d239c-d85c-11e4-8e1c-3e156646b969.png" alt="TriceKit logo" /></p>
+<p align="center"><img src="https://cloud.githubusercontent.com/assets/6678136/8150719/f8aefea8-1348-11e5-8932-62bea435c474.png" alt="TriceKit logo" /></p>
 
 This is the TriceKit iOS SDK that delivers delightful experiences in conjunction with the [TriceKit management system](http://tricekit.com).
 
