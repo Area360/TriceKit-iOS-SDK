@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly)   NSString *buildingDescription;
 
 /// Image URL of this building.
-@property (nonatomic, copy, readonly)   NSString *imageUrl;
+@property (nonatomic, copy, readonly)   NSURL    *imageUrl;
 
 /// The address of this building.
 @property (nonatomic, strong, readonly) TriceAddress *address;

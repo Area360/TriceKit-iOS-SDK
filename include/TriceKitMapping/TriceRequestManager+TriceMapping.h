@@ -8,7 +8,7 @@
 
 #import "TriceRequestManager.h"
 
-@class TricePositioning;
+@class TricePositioning, TriceBuilding, TriceFloor, TriceMarker, TriceDirections;
 
 NS_ASSUME_NONNULL_BEGIN
 

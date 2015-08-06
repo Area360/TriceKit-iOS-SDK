@@ -74,7 +74,7 @@ typedef NS_ENUM(NSInteger, TriceErrorCode) {
  *
  *  @return The absolute path to the cache directory.
  */
-NSString * cacheDirectoryPath();
+NSURL * cacheDirectoryURL();
 
 /**
  *  Gets the local cached file path that is used for a given url.
@@ -85,7 +85,7 @@ NSString * cacheDirectoryPath();
  *
  *  @return The absolute path to the cached file.
  */
-NSString * cachedFilePathForUrl(NSString *url);
+NSURL * cachedFileURLForURL(NSURL *url);
 
 /**
  *  Tests a geographical coordinate for whether it is inside or outside of a polygon of coordinates.
@@ -203,9 +203,9 @@ NS_INLINE void reverseChars(unsigned char * b, size_t c) {
  *
  *  @return YES if a file exists at the given path, otherwise NO.
  */
-NS_INLINE BOOL fileExists(NSString *path) {
-    return [[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:nil];
-}
+//NS_INLINE BOOL fileExists(NSString *path) {
+//    return [[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:nil];
+//}
 
 /**
  *  A convenience function for checking whether a cached file exists for a given url identifier.
@@ -214,8 +214,8 @@ NS_INLINE BOOL fileExists(NSString *path) {
  *
  *  @return YES if the file exists, otherwise NO.
  */
-NS_INLINE BOOL cachedFileExistsForUrl(NSString *url) {
-    return fileExists(cachedFilePathForUrl(url));
+NS_INLINE BOOL cachedFileExistsForURL(NSURL *url) {
+    return [cachedFileURLForURL(url) checkResourceIsReachableAndReturnError:nil];
 }
 
 /**

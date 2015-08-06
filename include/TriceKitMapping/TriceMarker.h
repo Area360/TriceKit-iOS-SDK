@@ -48,10 +48,10 @@ typedef NS_ENUM(NSInteger, TriceMarkerType){
 @property (nonatomic, assign, readonly) CGPoint coordinate;
 
 /// The image URL to the icon for displaying this marker.
-@property (nonatomic, copy, readonly)   NSString *iconUrl;
+@property (nonatomic, copy, readonly)   NSURL *iconUrl;
 
 /// The image URL to the story image, if applicable.
-@property (nonatomic, copy, readonly)   NSString *storyImageUrl;
+@property (nonatomic, copy, readonly)   NSURL *storyImageUrl;
 
 /// The unique identifier of the story this links to, if applicable.
 @property (nonatomic, copy, readonly)   NSString *storyUid;

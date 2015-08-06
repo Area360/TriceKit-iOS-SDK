@@ -79,7 +79,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly)   NSString *durationToNextPoint;
 
 /// An image URL for the helpful arrow icons.
-@property (nonatomic, copy, readonly)   NSString *iconUrl;
+@property (nonatomic, copy, readonly)   NSURL *iconUrl;
 
 @end
 

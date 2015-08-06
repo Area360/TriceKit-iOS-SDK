@@ -15,10 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @protocol TriceLoadingViewDelegate <NSObject>
 
-/**
- *  The view that the loading view will be added as a subview to on a call to startLoadingAnimated:.
- */
-@property (nonatomic, strong, nullable) UIView *targetView;
+@required
 
 /**
  *  Starts the loading view. You are responsible for adding the loading view as a subview to targetView and also setting up any needed constraints before displaying it.
@@ -33,6 +30,13 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param animated Whether hiding the loading view should be animated.
  */
 -(void)stopLoadingAnimated:(BOOL)animated;
+
+@optional
+
+/**
+ *  The view that the loading view will be added as a subview to on a call to startLoadingAnimated:.
+ */
+@property (nonatomic, strong, nullable) UIView *targetView;
 
 @end
 

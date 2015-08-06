@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 STQRY. All rights reserved.
 //
 
-#import "AFHTTPSessionManager.h"
+#import <AFHTTPSessionManager.h>
 #import <CoreLocation/CLLocationManager.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class TriceBuilding, TriceFloor, TriceMarker, TriceBeacon, TriceDirections, TriceZone, TriceTrigger;
+@class TriceBeacon;
 
 /**
  *  TriceRequestManager is the networking manager used throughout TriceKit to make HTTP requests to the TriceKit server.
@@ -40,17 +40,6 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param failure The failure block passed into TriceRequestManager.
  */
 +(void (^)(NSURLSessionDataTask *, NSError *))failureBlock:(nullable void (^)(NSError *error))failure;
-
-/**
- *  Downloads an image from a given URL asynchronously, caching it once it completes. If a cached version already exists then that is returned through the success block before this method returns.
- *
- *  @param imageUrl The absolute URL of the image to download.
- *  @param success  A callback block that returns the image through its only parameter.
- *  @param failure  If something went wrong during the download, that is described in the NSError object that is passed back through this failure callback block.
- */
-+(NSURLSessionDownloadTask *)requestImage:(NSString *)imageUrl
-                                  success:(nullable void (^)(UIImage *image))success
-                                  failure:(nullable void (^)(NSError *error))failure;
 
 #pragma mark - Beacons
 

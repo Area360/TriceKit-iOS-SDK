@@ -8,6 +8,8 @@
 
 #import "TriceRequestManager.h"
 
+@class TriceZone;
+
 NS_ASSUME_NONNULL_BEGIN
 
 /**

@@ -67,12 +67,12 @@ extern TriceFontKey   * const TriceFontKeySecondary;
 /**
  *  Gets a font for a given key with a specified point size.
  *
- *  @param key  The font key.
- *  @param size The point size of the font. This value will be multiplied against the fontScale value.
+ *  @param key   The font key.
+ *  @param scale The scaling value to multiply against the font key.
  *
  *  @return The font for the given key with the specified size, or nil if it does not exist.
  */
-+(UIFont *)fontForKey:(TriceFontKey *)key size:(CGFloat)size;
++(UIFont *)fontForKey:(TriceFontKey *)key scale:(CGFloat)scale;
 
 @end
 

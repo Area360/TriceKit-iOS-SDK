@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, readonly) NSInteger level;
 
 /// An image URL for the floorplan of this floor.
-@property (nonatomic, copy, readonly)   NSString *imageUrl;
+@property (nonatomic, copy, readonly)   NSURL *imageUrl;
 
 /// The offset from north that this floor is.
 @property (nonatomic, assign, readonly) CLLocationDegrees offset;
