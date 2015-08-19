@@ -93,7 +93,7 @@ NS_INLINE NSString * NSStringFromTriceTriggerEvent(TriceTriggerEvent event)
  *
  *  @return An initialized instance.
  */
-+(instancetype)triggerWithEvent:(TriceTriggerEvent)event frequency:(NSInteger)frequency limit:(NSUInteger)limit;
++(instancetype)triggerWithEvent:(TriceTriggerEvent)event frequency:(NSTimeInterval)frequency limit:(NSUInteger)limit;
 
 /**
  *  Constructs a new TriceTrigger object for dwelling in a zone. This constructor is used to create internal testing triggers for use in TriceZone objects so that you may easily test and experiment with triggers.
@@ -108,7 +108,7 @@ NS_INLINE NSString * NSStringFromTriceTriggerEvent(TriceTriggerEvent event)
  *
  *  @return An initialized instance.
  */
-+(instancetype)triggerWithDwellTime:(NSTimeInterval)dwellTime frequency:(NSInteger)frequency limit:(NSUInteger)limit;
++(instancetype)triggerWithDwellTime:(NSTimeInterval)dwellTime frequency:(NSTimeInterval)frequency limit:(NSUInteger)limit;
 
 /**
  *  Updates the receiver to have the same internal state as the passed in trigger. This is so that the receiver will not fire again immediately. 
