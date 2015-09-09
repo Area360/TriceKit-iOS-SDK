@@ -12,6 +12,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// The notification name which is posted when a trigger managers zones that is being monitored changes. The object is the trigger manager whose value changed, and the new value is reflected in the property at the time of the notification.
+extern NSString * const TriceTriggerManagerDidUpdateZonesNotification;
+
 /**
  *  The TriceTriggerManager class manages the Zones, Triggers and Actions aspect of the TriceKit SDK.
  */

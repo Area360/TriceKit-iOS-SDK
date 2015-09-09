@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 STQRY. All rights reserved.
 //
 
-#import <AFHTTPSessionManager.h>
+#import <AFNetworking/AFHTTPSessionManager.h>
 #import <CoreLocation/CLLocationManager.h>
 
 NS_ASSUME_NONNULL_BEGIN

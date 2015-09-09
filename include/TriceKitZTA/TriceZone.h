@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 STQRY. All rights reserved.
 //
 
-#import "MTLModel.h"
+#import <Mantle/MTLModel.h>
+#import <Mantle/MTLJSONAdapter.h>
 #import "TriceObjectDescriptor.h"
 #import "TriceTrigger.h"
 #import "TriceBeacon.h"
-#import <MTLJSONAdapter.h>
 #import <CoreLocation/CLLocation.h>
 #import <CoreLocation/CLRegion.h>
 #import <CoreGraphics/CoreGraphics.h>

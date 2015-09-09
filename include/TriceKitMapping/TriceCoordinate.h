@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 STQRY. All rights reserved.
 //
 
-#import "MTLModel.h"
-#import "MTLJSONAdapter.h"
+#import <Mantle/MTLModel.h>
+#import <Mantle/MTLJSONAdapter.h>
 #import <CoreGraphics/CoreGraphics.h>
 
 NS_ASSUME_NONNULL_BEGIN
