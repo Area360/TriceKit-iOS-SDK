@@ -41,6 +41,8 @@ To allow TriceKit to handle local notifications that are generated from it, add 
 [TriceAppDelegateProxy handleTriceKitLocalNotifications];
 ```
 
+Ensure you have the appropriate NSLocationUsage key in your application's info.plist! If you do not have either NSLocationWhenInUseUsageDescription or NSLocationAlwaysUsageDescription then Apple will silently deny any requests to use location services and TriceKit will not work.
+
 ### Example Tasks
 
 ###### Creating a new beacon zone, trigger and action programmatically:
