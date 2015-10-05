@@ -18,10 +18,14 @@ NS_ASSUME_NONNULL_BEGIN
  *  The manufacturer of a particular iBeacon.
  */
 typedef NS_ENUM(NSInteger, TriceBeaconManufacturer) {
-    TriceBeaconManufacturerUnknown = 0,
-    TriceBeaconManufacturerEstimote,        ///< Estimote.
-    TriceBeaconManufacturerKontakt,         ///< Kontact.
-    TriceBeaconManufacturerSensoro          ///< Sensoro.
+    TriceBeaconManufacturerUnknown       = 0,   ///< Unknown.
+    TriceBeaconManufacturerEstimote      = 1,   ///< Estimote.
+    TriceBeaconManufacturerKontakt       = 2,   ///< Kontact.
+    TriceBeaconManufacturerYunziSensoro  = 3,   ///< Sensoro.
+    TriceBeaconManufacturerRedbear       = 4,   ///< Redbear.
+    TriceBeaconManufacturerBeek          = 5,   ///< Beek.
+    TriceBeaconManufacturerAruba         = 6,   ///< Aruba.
+    TriceBeaconManufacturerSmartSensoro  = 7    ///< Sensoro.
 };
 
 NS_INLINE NSString * NSStringFromCLProximity(CLProximity proximity)
@@ -92,7 +96,7 @@ NS_INLINE NSString * NSStringFromCLProximity(CLProximity proximity)
 @property (nonatomic, assign, getter=isMoving) BOOL moving;
 
 /// The current battery percentage that the beacon is reporting.
-@property (nonatomic, assign, readonly) NSInteger batteryPercentage;
+@property (nonatomic, assign) NSInteger batteryLevel;
 
 /// The time interval that the beacon broadcasts its signal, in milliseconds.
 @property (nonatomic, assign, readonly) NSInteger interval;
