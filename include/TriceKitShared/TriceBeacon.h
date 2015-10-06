@@ -14,6 +14,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/*
+ 1 = Estimote
+ 2 = Kontakt
+ 3 = Yunzi Sensoro
+ 4 = Redbear
+ 5 = Beek
+ 6 = Aruba
+ 7 = SmartBeacon Sensoro
+ */
+
 /**
  *  The manufacturer of a particular iBeacon.
  */
