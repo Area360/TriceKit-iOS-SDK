@@ -1,7 +1,6 @@
 Pod::Spec.new do |s|
-
   s.name                   = "TriceKit"
-  s.version                = "0.4.12"
+  s.version                = "0.4.13"
   s.summary                = "The TriceKit iOS SDK does things."
   s.homepage               = "http://tricekit.com/"
   s.license                = { :type => 'none', :text => "Copyright 2015 STQRY" }
@@ -9,7 +8,7 @@ Pod::Spec.new do |s|
   s.platform               = :ios, '7.0'
   s.source                 = { :git => "https://github.com/stqry/TriceKit.git", :tag => s.version }
   s.requires_arc           = true
-  s.xcconfig               = { 'OTHER_LDFLAGS' => '-lObjC -lc++' }
+  s.pod_target_xcconfig    = { 'OTHER_LDFLAGS' => '-lObjC -lc++' }
   s.source_files           = 'include/TriceKit.{h,m}'
 
   s.subspec 'Core' do |ss|

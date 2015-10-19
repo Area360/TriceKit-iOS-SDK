@@ -16,6 +16,7 @@ typedef NSString TriceFontKey;
 extern TriceColourKey * const TriceColourKeyPrimary;
 extern TriceColourKey * const TriceColourKeySecondary;
 extern TriceColourKey * const TriceColourKeyElements;
+extern TriceColourKey * const TriceColourKeyBlackText;
 
 extern TriceFontKey   * const TriceFontKeyPrimary;
 extern TriceFontKey   * const TriceFontKeySecondary;

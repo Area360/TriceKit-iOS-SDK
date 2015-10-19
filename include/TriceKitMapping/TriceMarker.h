@@ -32,6 +32,8 @@ typedef NS_ENUM(NSInteger, TriceMarkerType){
 /// A unique identifier for this marker.
 @property (nonatomic, copy, readonly)   NSString *uid;
 
+@property (nonatomic, assign, readonly) NSUInteger engineId;
+
 /// The unique identifier of the room that this marker exists in.
 @property (nonatomic, copy, readonly)   NSString *roomUid;
 
