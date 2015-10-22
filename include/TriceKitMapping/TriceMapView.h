@@ -11,14 +11,20 @@
 #import "TriceFloor.h"
 #import "TriceMarker.h"
 #import "TriceBeacon.h"
-#import "TriceDirections.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-/**
- *  The name of a notification that is posted by a TriceFloor object when that floor's floorplan image has completed loading and will be displayed imminently. This is a good time to hide any loading views that may be present.
- */
-extern NSString * const TriceMapViewFloorplanImageDidLoadNotification;
+typedef NS_OPTIONS(NSUInteger, TriceMapCameraUpdateType) {
+    TriceMapCameraUpdateTypeNone   = 0,
+    TriceMapCameraUpdateTypeMove   = 1 << 0,
+    TriceMapCameraUpdateTypeRotate = 1 << 1,
+    TriceMapCameraUpdateTypeZoom   = 1 << 2
+};
+
+typedef NS_ENUM(NSInteger, TriceMapViewState) {
+    TriceMapViewStateNormal,
+    TriceMapViewStateWayfindingOverview
+};
 
 @protocol TriceMapViewDelegate;
 
@@ -31,15 +37,6 @@ extern NSString * const TriceMapViewFloorplanImageDidLoadNotification;
 @interface TriceMapView : GLKView
 
 /**
- *  Routing directions that are used by the map to display turn-by-turn directions to the user.
- *
- *  Assigning a non-nil value to this property automatically sets up the map to display the directions. That is, it draws a line for each step from starting to end points, hides all markers that are not the start and end markers and sets the camera frame by calling setCameraFrameToRouteOverview.
- *
- *  Assigning a nil value to this property will reshow all markers and remove the guide line.
- */
-@property (nonatomic, strong, nullable) TriceDirections *routeDirections;
-
-/**
  *  The building that this map is displaying. 
  *
  *  Setting this will request the building's floors if necessary. Once the floors are loaded, markers for currentFloorIndex will be loaded, requesting them if necessary. If the value of currentFloorIndex is beyond the number of loaded floors for this building, a NSRangeException will be raised.
@@ -49,9 +46,9 @@ extern NSString * const TriceMapViewFloorplanImageDidLoadNotification;
 /**
  *  The currently viewed floor on the map.
  *
- *  This is a transient property that simply calls building.floors[currentFloorIndex].
+ *  This is a transient property that simply wraps around currentFloorIndex by calling building.floors[currentFloorIndex] or setCurrentFloorIndex:.
  */
-@property (nonatomic, strong, readonly) TriceFloor *currentFloor;
+@property (nonatomic, strong) TriceFloor *currentFloor;
 
 /**
  *  The currently viewed floor on the map.
@@ -68,13 +65,6 @@ extern NSString * const TriceMapViewFloorplanImageDidLoadNotification;
 @property (nonatomic, weak, nullable) id <TriceMapViewDelegate> mapDelegate;
 
 /**
- *  The camera frame that this map view is used to display its content.
- *
- *  Setting this value will animate the change to the new frame.
- */
-@property (nonatomic, assign) CGRect cameraFrame;
-
-/**
  *  Whether or not the camera frame is currently tracking the user's location.
  *
  *  Setting this to YES will animate the camera frame to to the user's current location.
@@ -82,21 +72,26 @@ extern NSString * const TriceMapViewFloorplanImageDidLoadNotification;
 @property (nonatomic, assign, getter=isLockedOnUserLocation) BOOL lockedOnUserLocation;
 
 /**
- *  Sets the camera frame to show the entire route on screen. Does nothing if the property routeDirections is not set.
- */
--(void)setCameraFrameToRouteOverview;
-
-/**
- *  Sets the camera frame to show the specified routing step. Does nothing if the property routeDirections is not set.
- *
- *  @param index The index of the routing step to zoom to.
- */
--(void)setCameraFrameToRouteStepIndex:(NSInteger)index;
-
-/**
  *  Cancels all pending or currently executing map server requests. Typically you would call this method when you are done with the mapView and do not want to wait for the requests to finish before deallocating.
  */
 -(void)cancelAllMapRequests;
+
+/**
+ *  Updates the map camera. The change will be animated.
+ *
+ *  @param updateType      The type of update to perform. Valid updates are a combination of move, zoom and rotate.
+ *  @param centerPoint     If the updateType includes move, then this value will be used to calculate the new center of the map.
+ *  @param rotationDegrees If the updateType includes rotate, then this value will be used to calculate the new camera rotation.
+ *  @param zoomScale       If the updateType includes zoom, then this value will be used to calculate the new zoom scale for the camera.
+ */
+-(void)updateMapCamera:(TriceMapCameraUpdateType)updateType centerPoint:(CGPoint)centerPoint rotation:(CGFloat)rotationDegrees zoom:(CGFloat)zoomScale;
+
+- (BOOL)hasLoadedWayfindingInfoForFloor:(TriceFloor *)floor;
+
+@property (nonatomic, assign, readonly) TriceMapViewState state;
+
+- (void)startWayfindingFromLocation:(TriceMarker *)fromLocation toLocation:(TriceMarker *)toLocation;
+- (void)endWayfinding;
 
 @end
 
@@ -143,6 +138,25 @@ extern NSString * const TriceMapViewFloorplanImageDidLoadNotification;
  *  @param animated If YES, the change to the new region was animated.
  */
 -(void)triceMapView:(TriceMapView *)mapView regionDidChangeAnimated:(BOOL)animated;
+
+/**
+ *  This method is called whenever the floorplan image finishes loading, and will be displayed imminently. This is a good time to hide any loading views that may be active if the floor is the current floor.
+ *
+ *  @param mapView The map view whose floorplan image loaded.
+ *  @param floor   The floor which floorplan has loaded. This may or may not be the current floor.
+ */
+-(void)triceMapView:(TriceMapView *)mapView floorplanImageDidLoad:(TriceFloor *)floor;
+
+/**
+ *  This method is called whenever the mapView fails loading required assets from a network request. Note this is not called for every failure, only those above a certain significance. Examples of significant errors include when the map fails retrieving its list of floors, or list of markers for the current floor. Not significant errors include failing to download a single marker's image.
+ *
+ *  @param mapView The map view which failed loading.
+ *  @param error   The error object describing the problem.
+ */
+-(void)triceMapView:(TriceMapView *)mapView didFailLoadingWithError:(NSError *)error;
+
+
+- (void)triceMapView:(TriceMapView *)mapView didLoadWayfindingInfoForFloor:(TriceFloor *)floor;
 
 @end
 
