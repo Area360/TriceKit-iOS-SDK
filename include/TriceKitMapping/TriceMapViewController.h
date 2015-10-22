@@ -12,6 +12,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_OPTIONS(NSUInteger, TriceMapViewControllerDisplayOptions) {
+    TriceMapViewControllerDisplayOptionsNone                 = 0,
+    TriceMapViewControllerDisplayOptionsRoundImageCorners    = 1 << 0,
+    TriceMapViewControllerDisplayOptionsDisableWayfinding    = 1 << 1,
+    TriceMapViewControllerDisplayOptionsDisableFloorSelector = 1 << 2
+};
+
 /**
  *  TriceMapViewController manages a TriceMapView to render an entire indoor mapping experience. You should use this class as-is and not subclass it when using this view controller.
  *
@@ -37,6 +44,8 @@ NS_ASSUME_NONNULL_BEGIN
  *  A callback block that indicates that the popup info view for a marker was selected.
  */
 @property (nonatomic, copy, nullable) void (^markerSelectedAction)(TriceMarker *marker);
+
+@property (nonatomic, assign) TriceMapViewControllerDisplayOptions displayOptions;
 
 /**
  *  Creates a new TriceMapViewController for a given building.
