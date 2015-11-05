@@ -90,7 +90,7 @@ typedef NS_ENUM(NSInteger, TriceMapViewState) {
 
 @property (nonatomic, assign, readonly) TriceMapViewState state;
 
-- (void)startWayfindingFromLocation:(TriceMarker *)fromLocation toLocation:(TriceMarker *)toLocation;
+- (BOOL)startWayfindingFromLocation:(TriceMarker *)fromLocation toLocation:(TriceMarker *)toLocation error:(NSError **)error;
 - (void)endWayfinding;
 
 @end

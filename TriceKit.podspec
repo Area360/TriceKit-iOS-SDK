@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                   = "TriceKit"
-  s.version                = "0.4.19"
+  s.version                = "0.4.20"
   s.summary                = "The TriceKit iOS SDK does things."
   s.homepage               = "http://tricekit.com/"
   s.license                = { :type => 'none', :text => "Copyright 2015 STQRY" }
