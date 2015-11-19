@@ -29,13 +29,6 @@ typedef NS_OPTIONS(NSUInteger, TriceMapViewControllerDisplayOptions) {
 @interface TriceMapViewController : GLKViewController <TriceMapViewDelegate>
 
 /**
- *  The loading view that this view controller will use when making network requests.
- *
- *  This property is lazy-loaded. If you do not set this value yourself then a default loading view will be initialized and set to this property when needed.
- */
-@property (nonatomic, strong) UIView <TriceLoadingViewDelegate> *loadingView;
-
-/**
  *  The map view that this view controller uses to render indoor mapping.
  */
 @property (nonatomic, strong, readonly) TriceMapView *mapView;

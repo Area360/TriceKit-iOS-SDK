@@ -17,6 +17,7 @@ extern TriceColourKey * const TriceColourKeyPrimary;
 extern TriceColourKey * const TriceColourKeySecondary;
 extern TriceColourKey * const TriceColourKeyElements;
 extern TriceColourKey * const TriceColourKeyBlackText;
+extern TriceColourKey * const TriceColourKeyGrayText;
 
 extern TriceFontKey   * const TriceFontKeyPrimary;
 extern TriceFontKey   * const TriceFontKeySecondary;
@@ -74,6 +75,18 @@ extern TriceFontKey   * const TriceFontKeySecondary;
  *  @return The font for the given key with the specified size, or nil if it does not exist.
  */
 +(UIFont *)fontForKey:(TriceFontKey *)key scale:(CGFloat)scale;
+
++(void)setAttributes:(NSDictionary<NSString *, id> *)attributes forClass:(Class)klass;
+
++(NSDictionary *)attributesForClass:(Class)klass;
+
++(void)setStylesFromPlistNamed:(NSString *)plist;
+
++ (void)setBlurEffectEnabled:(BOOL)blurEffectEnabled;
++ (BOOL)blurEffectEnabled;
+
++ (void)setLoadingViewClass:(Class)klass;
++ (Class)loadingViewClass;
 
 @end
 

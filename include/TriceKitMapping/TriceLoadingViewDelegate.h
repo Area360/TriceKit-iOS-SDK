@@ -31,13 +31,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 -(void)stopLoadingAnimated:(BOOL)animated;
 
-@optional
-
-/**
- *  The view that the loading view will be added as a subview to on a call to startLoadingAnimated:.
- */
-@property (nonatomic, strong, nullable) UIView *targetView;
-
 @end
 
 NS_ASSUME_NONNULL_END

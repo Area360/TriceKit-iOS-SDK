@@ -11,6 +11,7 @@
 #import "TriceFloor.h"
 #import "TriceMarker.h"
 #import "TriceBeacon.h"
+#import "TriceWayfindingOverview.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -90,8 +91,16 @@ typedef NS_ENUM(NSInteger, TriceMapViewState) {
 
 @property (nonatomic, assign, readonly) TriceMapViewState state;
 
-- (BOOL)startWayfindingFromLocation:(TriceMarker *)fromLocation toLocation:(TriceMarker *)toLocation error:(NSError **)error;
+- (void)startWayfindingFromLocation:(TriceMarker *)fromLocation
+                         toLocation:(TriceMarker *)toLocation
+                         completion:(void (^)(TriceWayfindingOverview * _Nullable overview, NSError * _Nullable error))completion;
+
 - (void)endWayfinding;
+- (void)boundCameraToWayfindingPathAnimated:(BOOL)animated;
+
+@property (nonatomic, strong, readonly, nullable) TriceWayfindingOverview *wayfindingOverview;
+@property (nonatomic, copy, readonly, nullable) NSArray <TriceFloor *>*wayfindingFloors;
+@property (nonatomic, assign) NSUInteger wayfindingFloorIndex;
 
 @end
 
