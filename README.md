@@ -206,3 +206,34 @@ The latest set of zones that are nearby can be preserved between application lau
 self.triggerManager.allowEncodingZonesToDisk = YES;
 ```
 
+## Mapping
+
+Adding an entire indoor mapping experience into your application is as easy as creating an instance of `TriceMapViewController` and displaying it.
+
+```objective-c
+TriceMapViewController *mapViewController = [TriceMapViewController mapViewControllerForBuilding:^BOOL(TriceBuilding *building) {
+    return YES;
+}];
+[self.navigationController pushViewController:mapViewController animated:YES];
+```
+
+TriceKit will automatically fetch the available buildings for you asynchronously, and display the building you select. 
+
+###### Selecting from multiple buildings
+
+```objective-c
+TriceMapViewController *mapViewController = [TriceMapViewController mapViewControllerForBuilding:^BOOL(TriceBuilding *building) {
+    return [building.uid isEqualToString:<#BuildingUID#>];
+}];
+```
+
+###### Handling marker taps
+
+When the user taps on the info view bar detailing a marker, you may wish to display a page with more information about it. You can handle this action by setting the callback on `TriceMapViewController`:
+
+```objective-c
+TriceMapViewController *mapViewController = ....
+mapViewController.markerSelectedAction = ^(TriceMarker *marker) {
+    // Handle displaying your view controller here.
+};
+```
