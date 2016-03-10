@@ -1,0 +1,356 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C0C8A791C90F0C500EDCEEA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0C8A781C90F0C500EDCEEA /* main.m */; };
+		4C0C8A7C1C90F0C500EDCEEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0C8A7B1C90F0C500EDCEEA /* AppDelegate.m */; };
+		4C0C8A7F1C90F0C500EDCEEA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0C8A7E1C90F0C500EDCEEA /* ViewController.m */; };
+		4C0C8A821C90F0C600EDCEEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0C8A801C90F0C600EDCEEA /* Main.storyboard */; };
+		4C0C8A841C90F0C600EDCEEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C0C8A831C90F0C600EDCEEA /* Assets.xcassets */; };
+		4C0C8A941C910E7100EDCEEA /* TriceKitStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0C8A911C910E7100EDCEEA /* TriceKitStatusViewController.m */; };
+		4C0C8A951C910E7100EDCEEA /* ZTADemoApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0C8A931C910E7100EDCEEA /* ZTADemoApplication.m */; };
+		4C0C8A971C9111BE00EDCEEA /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0C8A961C9111BE00EDCEEA /* CoreBluetooth.framework */; };
+		4C0C8A991C91137A00EDCEEA /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0C8A981C91137A00EDCEEA /* libstdc++.tbd */; };
+		4C0C8A9B1C91138E00EDCEEA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0C8A9A1C91138E00EDCEEA /* CoreLocation.framework */; };
+		4C0C8A9D1C91139D00EDCEEA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0C8A9C1C91139D00EDCEEA /* CoreTelephony.framework */; };
+		4C0C8A9F1C9113EE00EDCEEA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0C8A9E1C9113EE00EDCEEA /* SystemConfiguration.framework */; };
+		4C0C8AA11C9114D300EDCEEA /* TriceKitConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C0C8AA01C9114D300EDCEEA /* TriceKitConfig.plist */; };
+		4C0C8AA51C9118C500EDCEEA /* TriceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0C8AA41C9118C500EDCEEA /* TriceKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4C0C8A741C90F0C500EDCEEA /* ZTADemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZTADemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C0C8A781C90F0C500EDCEEA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4C0C8A7A1C90F0C500EDCEEA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4C0C8A7B1C90F0C500EDCEEA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4C0C8A7D1C90F0C500EDCEEA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4C0C8A7E1C90F0C500EDCEEA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4C0C8A811C90F0C600EDCEEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4C0C8A831C90F0C600EDCEEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4C0C8A881C90F0C600EDCEEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C0C8A901C910E7100EDCEEA /* TriceKitStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriceKitStatusViewController.h; sourceTree = "<group>"; };
+		4C0C8A911C910E7100EDCEEA /* TriceKitStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriceKitStatusViewController.m; sourceTree = "<group>"; };
+		4C0C8A921C910E7100EDCEEA /* ZTADemoApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTADemoApplication.h; sourceTree = "<group>"; };
+		4C0C8A931C910E7100EDCEEA /* ZTADemoApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTADemoApplication.m; sourceTree = "<group>"; };
+		4C0C8A961C9111BE00EDCEEA /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		4C0C8A981C91137A00EDCEEA /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		4C0C8A9A1C91138E00EDCEEA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4C0C8A9C1C91139D00EDCEEA /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		4C0C8A9E1C9113EE00EDCEEA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4C0C8AA01C9114D300EDCEEA /* TriceKitConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TriceKitConfig.plist; sourceTree = "<group>"; };
+		4C0C8AA41C9118C500EDCEEA /* TriceKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TriceKit.framework; path = ../../TriceKit.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C0C8A711C90F0C500EDCEEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C0C8A991C91137A00EDCEEA /* libstdc++.tbd in Frameworks */,
+				4C0C8A971C9111BE00EDCEEA /* CoreBluetooth.framework in Frameworks */,
+				4C0C8A9B1C91138E00EDCEEA /* CoreLocation.framework in Frameworks */,
+				4C0C8A9D1C91139D00EDCEEA /* CoreTelephony.framework in Frameworks */,
+				4C0C8A9F1C9113EE00EDCEEA /* SystemConfiguration.framework in Frameworks */,
+				4C0C8AA51C9118C500EDCEEA /* TriceKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C0C8A6B1C90F0C500EDCEEA = {
+			isa = PBXGroup;
+			children = (
+				4C0C8AA61C9118CA00EDCEEA /* Frameworks */,
+				4C0C8A761C90F0C500EDCEEA /* ZTADemo */,
+				4C0C8A751C90F0C500EDCEEA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4C0C8A751C90F0C500EDCEEA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C0C8A741C90F0C500EDCEEA /* ZTADemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C0C8A761C90F0C500EDCEEA /* ZTADemo */ = {
+			isa = PBXGroup;
+			children = (
+				4C0C8A771C90F0C500EDCEEA /* Supporting Files */,
+				4C0C8A831C90F0C600EDCEEA /* Assets.xcassets */,
+				4C0C8A801C90F0C600EDCEEA /* Main.storyboard */,
+				4C0C8A881C90F0C600EDCEEA /* Info.plist */,
+				4C0C8AA01C9114D300EDCEEA /* TriceKitConfig.plist */,
+				4C0C8A7A1C90F0C500EDCEEA /* AppDelegate.h */,
+				4C0C8A7B1C90F0C500EDCEEA /* AppDelegate.m */,
+				4C0C8A901C910E7100EDCEEA /* TriceKitStatusViewController.h */,
+				4C0C8A911C910E7100EDCEEA /* TriceKitStatusViewController.m */,
+				4C0C8A7D1C90F0C500EDCEEA /* ViewController.h */,
+				4C0C8A7E1C90F0C500EDCEEA /* ViewController.m */,
+				4C0C8A921C910E7100EDCEEA /* ZTADemoApplication.h */,
+				4C0C8A931C910E7100EDCEEA /* ZTADemoApplication.m */,
+			);
+			path = ZTADemo;
+			sourceTree = "<group>";
+		};
+		4C0C8A771C90F0C500EDCEEA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C0C8A781C90F0C500EDCEEA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4C0C8AA61C9118CA00EDCEEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C0C8A961C9111BE00EDCEEA /* CoreBluetooth.framework */,
+				4C0C8A9A1C91138E00EDCEEA /* CoreLocation.framework */,
+				4C0C8A9C1C91139D00EDCEEA /* CoreTelephony.framework */,
+				4C0C8A981C91137A00EDCEEA /* libstdc++.tbd */,
+				4C0C8A9E1C9113EE00EDCEEA /* SystemConfiguration.framework */,
+				4C0C8AA41C9118C500EDCEEA /* TriceKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C0C8A731C90F0C500EDCEEA /* ZTADemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C0C8A8B1C90F0C600EDCEEA /* Build configuration list for PBXNativeTarget "ZTADemo" */;
+			buildPhases = (
+				4C0C8A701C90F0C500EDCEEA /* Sources */,
+				4C0C8A711C90F0C500EDCEEA /* Frameworks */,
+				4C0C8A721C90F0C500EDCEEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZTADemo;
+			productName = ZTADemo;
+			productReference = 4C0C8A741C90F0C500EDCEEA /* ZTADemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C0C8A6C1C90F0C500EDCEEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = Area360;
+				TargetAttributes = {
+					4C0C8A731C90F0C500EDCEEA = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = 4C0C8A6F1C90F0C500EDCEEA /* Build configuration list for PBXProject "ZTADemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4C0C8A6B1C90F0C500EDCEEA;
+			productRefGroup = 4C0C8A751C90F0C500EDCEEA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C0C8A731C90F0C500EDCEEA /* ZTADemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C0C8A721C90F0C500EDCEEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C0C8AA11C9114D300EDCEEA /* TriceKitConfig.plist in Resources */,
+				4C0C8A841C90F0C600EDCEEA /* Assets.xcassets in Resources */,
+				4C0C8A821C90F0C600EDCEEA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C0C8A701C90F0C500EDCEEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C0C8A7F1C90F0C500EDCEEA /* ViewController.m in Sources */,
+				4C0C8A7C1C90F0C500EDCEEA /* AppDelegate.m in Sources */,
+				4C0C8A791C90F0C500EDCEEA /* main.m in Sources */,
+				4C0C8A941C910E7100EDCEEA /* TriceKitStatusViewController.m in Sources */,
+				4C0C8A951C910E7100EDCEEA /* ZTADemoApplication.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4C0C8A801C90F0C600EDCEEA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C0C8A811C90F0C600EDCEEA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C0C8A891C90F0C600EDCEEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4C0C8A8A1C90F0C600EDCEEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4C0C8A8C1C90F0C600EDCEEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/../..",
+				);
+				INFOPLIST_FILE = ZTADemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.area360.ZTADemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4C0C8A8D1C90F0C600EDCEEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/../..",
+				);
+				INFOPLIST_FILE = ZTADemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.area360.ZTADemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C0C8A6F1C90F0C500EDCEEA /* Build configuration list for PBXProject "ZTADemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C0C8A891C90F0C600EDCEEA /* Debug */,
+				4C0C8A8A1C90F0C600EDCEEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C0C8A8B1C90F0C600EDCEEA /* Build configuration list for PBXNativeTarget "ZTADemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C0C8A8C1C90F0C600EDCEEA /* Debug */,
+				4C0C8A8D1C90F0C600EDCEEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C0C8A6C1C90F0C500EDCEEA /* Project object */;
+}
