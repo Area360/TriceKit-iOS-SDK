@@ -14,6 +14,7 @@ typedef NS_ENUM(NSInteger, TKTriceKitState)
 
 @class TKZone;
 @protocol TKTriceKitManagerRemoteUpdateDelegate;
+@protocol TKCallbackActionType;
 
 @interface TKTriceKitManager : NSObject
 
@@ -24,8 +25,10 @@ typedef NS_ENUM(NSInteger, TKTriceKitState)
 
 -(void)start;
 -(void)stop;
+-(void)updateCache;
 -(void)enteredBackground;
 -(void)enteredForeground;
+-(void)registerCallback:(id<TKCallbackActionType>)callback forActionType:(NSString *)actionType;
 
 -(NSArray<TKZone *> *)allZones;
 

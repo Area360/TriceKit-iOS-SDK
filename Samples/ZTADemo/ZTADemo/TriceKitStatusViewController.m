@@ -6,6 +6,28 @@
 #import "TriceKitStatusViewController.h"
 #import "ZTADemoApplication.h"
 #import "TriceKit/TKTriceKitManager.h"
+#import "TriceKit/TKCallbackActionType.h"
+#import <UIKit/UILocalNotification.h>
+
+
+@interface LocalNotifier : NSObject<TKCallbackActionType>
+@end
+
+@implementation LocalNotifier
+
+-(void)onActionTypeTriggered:(NSString *)actionType metadata:(NSDictionary *)metadata
+{
+    NSObject *messageObj = [metadata objectForKey:@"message"];
+    if (messageObj && [messageObj isKindOfClass:[NSString class]])
+    {
+        UILocalNotification *notification = [[UILocalNotification alloc] init];
+        notification.alertBody = (NSString *)messageObj;
+
+        [[ZTADemoApplication demoApplication] presentLocalNotificationNow:notification];
+    }
+}
+
+@end
 
 
 @interface TriceKitStatusViewController ()
@@ -36,7 +58,10 @@
             [self.navigationController popViewControllerAnimated:YES];
             break;
         case TKSStarting: self.lblTriceKitStatus.text = @"Status: Starting"; break;
-        case TKSStarted:  self.lblTriceKitStatus.text = @"Status: Started"; break;
+        case TKSStarted:
+            self.lblTriceKitStatus.text = @"Status: Started";
+            [[ZTADemoApplication demoApplication].triceKitManager registerCallback:[[LocalNotifier alloc] init] forActionType:kTKLocalNotificationActionType];
+            break;
         case TKSStopping: self.lblTriceKitStatus.text = @"Status: Stopping"; break;
         default:          self.lblTriceKitStatus.text = @"Status: Invalid"; break;
     }

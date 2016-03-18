@@ -19,6 +19,12 @@
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+
+    // Configure local notification.
+    UIUserNotificationType types = UIUserNotificationTypeAlert;
+    UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    [[ZTADemoApplication demoApplication] registerUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings];
+
     return YES;
 }
 
