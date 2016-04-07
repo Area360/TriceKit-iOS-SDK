@@ -1,0 +1,11 @@
+framework module TriceKit [extern_c]
+{
+  umbrella header "TriceKit.h"
+  export *
+  link framework "UIKit"
+  link framework "CoreBluetooth"
+  link framework "CoreLocation"
+  link framework "CoreTelephony"
+  link framework "SystemConfiguration"
+  link "c++"
+}

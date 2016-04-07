@@ -30,11 +30,12 @@ Using TriceKit in an existing project simply requires adding TriceKit.framework
 to the project.  You may then need to make some additional changes to the
 project configuration:
 
-* The following frameworks are required as dependencies of your app:
+* If you are not using modules, then the following frameworks are required as
+  dependencies of your app:
  * `CoreBluetooth.framework`: Needed to obtain beacon battery levels.
  * `CoreLocation.framework`: Needed to detect locations and beacons.
  * `CoreTelephony.framework`: Needed to detect changes in network connectivity.
- * `libstdc++.tbd`: The core of TriceKit is written in C++.
+ * `libc++.tbd`: The core of TriceKit is written in C++.
  * `SystemConfiguration.framework`: Needed to detect proximity to Wi-Fi
    networks.
  * `TriceKit.framework`: TriceKit itself.
@@ -45,6 +46,7 @@ project configuration:
   where `TriceKit.framework` is stored:
  * This is configured through the target Build Settings; add the path to the
    "Framework Search Paths" list.
+ * For Swift projects, this is instead "Import Paths" (under the "Swift Compiler - Search Paths" group).
 
 Additionally, TriceKit needs to perform background location monitoring to avoid
 using battery power scanning for beacons when there are no beacons expected to

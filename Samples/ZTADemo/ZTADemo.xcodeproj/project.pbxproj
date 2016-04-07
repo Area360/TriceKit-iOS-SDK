@@ -14,11 +14,6 @@
 		4C0C8A841C90F0C600EDCEEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C0C8A831C90F0C600EDCEEA /* Assets.xcassets */; };
 		4C0C8A941C910E7100EDCEEA /* TriceKitStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0C8A911C910E7100EDCEEA /* TriceKitStatusViewController.m */; };
 		4C0C8A951C910E7100EDCEEA /* ZTADemoApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0C8A931C910E7100EDCEEA /* ZTADemoApplication.m */; };
-		4C0C8A971C9111BE00EDCEEA /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0C8A961C9111BE00EDCEEA /* CoreBluetooth.framework */; };
-		4C0C8A991C91137A00EDCEEA /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0C8A981C91137A00EDCEEA /* libstdc++.tbd */; };
-		4C0C8A9B1C91138E00EDCEEA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0C8A9A1C91138E00EDCEEA /* CoreLocation.framework */; };
-		4C0C8A9D1C91139D00EDCEEA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0C8A9C1C91139D00EDCEEA /* CoreTelephony.framework */; };
-		4C0C8A9F1C9113EE00EDCEEA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0C8A9E1C9113EE00EDCEEA /* SystemConfiguration.framework */; };
 		4C0C8AA11C9114D300EDCEEA /* TriceKitConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C0C8AA01C9114D300EDCEEA /* TriceKitConfig.plist */; };
 		4C0C8AA51C9118C500EDCEEA /* TriceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0C8AA41C9118C500EDCEEA /* TriceKit.framework */; };
 /* End PBXBuildFile section */
@@ -37,11 +32,6 @@
 		4C0C8A911C910E7100EDCEEA /* TriceKitStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriceKitStatusViewController.m; sourceTree = "<group>"; };
 		4C0C8A921C910E7100EDCEEA /* ZTADemoApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTADemoApplication.h; sourceTree = "<group>"; };
 		4C0C8A931C910E7100EDCEEA /* ZTADemoApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTADemoApplication.m; sourceTree = "<group>"; };
-		4C0C8A961C9111BE00EDCEEA /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		4C0C8A981C91137A00EDCEEA /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
-		4C0C8A9A1C91138E00EDCEEA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		4C0C8A9C1C91139D00EDCEEA /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		4C0C8A9E1C9113EE00EDCEEA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4C0C8AA01C9114D300EDCEEA /* TriceKitConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TriceKitConfig.plist; sourceTree = "<group>"; };
 		4C0C8AA41C9118C500EDCEEA /* TriceKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TriceKit.framework; path = ../../TriceKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,11 +41,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C0C8A991C91137A00EDCEEA /* libstdc++.tbd in Frameworks */,
-				4C0C8A971C9111BE00EDCEEA /* CoreBluetooth.framework in Frameworks */,
-				4C0C8A9B1C91138E00EDCEEA /* CoreLocation.framework in Frameworks */,
-				4C0C8A9D1C91139D00EDCEEA /* CoreTelephony.framework in Frameworks */,
-				4C0C8A9F1C9113EE00EDCEEA /* SystemConfiguration.framework in Frameworks */,
 				4C0C8AA51C9118C500EDCEEA /* TriceKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,11 +96,6 @@
 		4C0C8AA61C9118CA00EDCEEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4C0C8A961C9111BE00EDCEEA /* CoreBluetooth.framework */,
-				4C0C8A9A1C91138E00EDCEEA /* CoreLocation.framework */,
-				4C0C8A9C1C91139D00EDCEEA /* CoreTelephony.framework */,
-				4C0C8A981C91137A00EDCEEA /* libstdc++.tbd */,
-				4C0C8A9E1C9113EE00EDCEEA /* SystemConfiguration.framework */,
 				4C0C8AA41C9118C500EDCEEA /* TriceKit.framework */,
 			);
 			name = Frameworks;
